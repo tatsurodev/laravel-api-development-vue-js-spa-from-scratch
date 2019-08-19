@@ -10,8 +10,8 @@ class ContactsController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'name' => '',
-            'email' => '',
+            'name' => 'required',
+            'email' => 'required',
             'birthday' => '',
             'company' => '',
         ]);
