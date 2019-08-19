@@ -9,8 +9,12 @@ class ContactsController extends Controller
 {
     public function store()
     {
-        Contact::create([
-            'name' => request('name'),
+        $data = request()->validate([
+            'name' => '',
+            'email' => '',
+            'birthday' => '',
+            'company' => '',
         ]);
+        Contact::create($data);
     }
 }
